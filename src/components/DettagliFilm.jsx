@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Alert, Badge, Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import StickyBox from "react-sticky-box";
 
 // http://www.omdbapi.com/?apikey=9c68448e&i=idFilm
 // https://striveschool-api.herokuapp.com/api/comments/:elementId
@@ -47,8 +48,6 @@ const DettagliFilm = () => {
       })
       .then(arrResp => {
         setComments(arrResp);
-       
-        
       })
       .catch(err => {
         alert(err.message);
@@ -56,36 +55,34 @@ const DettagliFilm = () => {
   };
   useEffect(() => {
     fetchGetFilms();
-  
-    
 
-    
-   console.log("component updated")
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    console.log("component updated");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filmId]);
 
-
   useEffect(() => {
-    if(comments.length > 0){
-
-        fetchGetComments();
-        console.log("comments updated")
+    if (comments.length > 0) {
+      fetchGetComments();
+      console.log("comments updated");
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
 
   return (
     <Container>
       <Row className="align-item-center">
         <Col>
-          <img src={film.Poster} alt="poster film" className="w-75" />
+          <StickyBox offsetTop={20} offsetBottom={20}>
+            <img src={film.Poster} alt="poster film" className="w-75" />
+          </StickyBox>
         </Col>
         <Col>
           <h1 className="display-1">{film.Title}</h1>
           <p>Released date: {film.Released}</p>
           <div className="text-start mt-5">
-            <p className="mb-4 fs-5"><strong>Genre:</strong> {film.Genre}</p>
+            <p className="mb-4 fs-5">
+              <strong>Genre:</strong> {film.Genre}
+            </p>
             <p className="fs-5">
               <strong>Description: </strong> {film.Plot}
             </p>
@@ -94,16 +91,16 @@ const DettagliFilm = () => {
             <h4 className="my-4 text-start">Comments</h4>
             {comments.length > 0 ? (
               comments.map(comment => {
-                return(
-                <div key={comment._id} className="border p-3 mb-3">
-                  <div className="fs-5 d-flex justify-content-between">
-                    <span>
-                      <strong>Comment: </strong> {comment.comment}
-                    </span>{" "}
-                    <Badge> {comment.rate}</Badge>
+                return (
+                  <div key={comment._id} className="border p-3 mb-3">
+                    <div className="fs-5 d-flex justify-content-between">
+                      <span>
+                        <strong>Comment: </strong> {comment.comment}
+                      </span>{" "}
+                      <Badge> {comment.rate}</Badge>
+                    </div>
                   </div>
-                </div>
-                )
+                );
               })
             ) : (
               <Alert key="info" variant="info">
