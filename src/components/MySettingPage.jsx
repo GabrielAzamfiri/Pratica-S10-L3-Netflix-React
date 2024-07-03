@@ -1,11 +1,11 @@
 import { Component } from "react";
-import logo from "../assets/img/netflix_logo.png";
+
 import { Col, Container, Row } from "react-bootstrap";
 
 class MySettingPage extends Component {
   render() {
     return (
-      <main style={{display: this.props.display}}>
+      <main >
         
         <Container className="my-5">
           <Row className="justify-content-center">

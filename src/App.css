@@ -36,7 +36,10 @@
     transform: rotate(360deg);
   }
 }
-
+.carousel img,
+.slick-track img {
+  border: solid 3px transparent;
+}
 .carousel img:hover {
   border: solid 3px rgb(149, 167, 250);
 }
@@ -44,6 +47,7 @@
 .opacity1 {
   opacity: 1 !important;
 }
+
 .slick-track img:hover {
   border: solid 3px rgb(149, 167, 250);
 }

@@ -8,40 +8,43 @@ import MyProfile from "./components/MyProfile";
 import MySettingPage from "./components/MySettingPage";
 import { Component } from "react";
 import SimpleSlider from "./components/SimpleSlider";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import TheShow from "./components/TheShow";
+import DettagliFilm from "./components/DettagliFilm";
 
 class App extends Component {
-  state = {
-    displayHome: "block",
-    displayProfile: "none",
-    displaySetting: "none",
-  };
-  profilePage = () => {
-    this.setState({ displayHome: "none", displayProfile: "block", displaySetting: "none" });
-  };
-  settingPage = () => {
-    this.setState({ displayHome: "none", displayProfile: "none", displaySetting: "block" });
-  };
-  homePage = () => {
-    this.setState({ displayHome: "block", displayProfile: "none", displaySetting: "none" });
-  };
+  
+  
   render() {
     return (
       <div className="App">
-        <TopBar profilePage={this.profilePage} settingPage={this.settingPage} homePage={this.homePage}/>
-        <main className="container-fluid container-lg my-5" style={{ display: this.state.displayHome }}>
-          <TvShow />
-          <div className="my4 ">
-            <div className="my-5">
-              <CarouselGrid film="one piece" carouselTitle="Best Anime" />
-              <CarouselGrid film="naruto" carouselTitle="Best anime until Shippuden" />
-              <CarouselGrid film="transformers" carouselTitle="Tranding Last Week" />
-              <CarouselGrid film="Harry Potter" carouselTitle="Watch It Again" />
-              <SimpleSlider film="pokemon" carouselTitle="Gotta Catch 'Em All"/>
-            </div>
-          </div>
-        </main>
-        <MyProfile display={this.state.displayProfile} />
-        <MySettingPage display={this.state.displaySetting} />
+        <BrowserRouter>
+          <TopBar/>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <main className="container-fluid container-lg my-5" >
+                  <TvShow />
+                  <div className="my4 ">
+                    <div className="my-5">
+                      <CarouselGrid film="one piece" carouselTitle="Best Anime" />
+                      <CarouselGrid film="naruto" carouselTitle="Best anime until Shippuden" />
+                      <CarouselGrid film="transformers" carouselTitle="Tranding Last Week" />
+                      <CarouselGrid film="Harry Potter" carouselTitle="Watch It Again" />
+                      <SimpleSlider film="pokemon" carouselTitle="Gotta Catch 'Em All" />
+                    </div>
+                  </div>
+                </main>
+              }
+            />
+            <Route path="/Profile" element={<MyProfile/>} />
+            <Route path="/Settings" element={<MySettingPage/>} />
+            <Route path="/TheShow/:nomeFilm" element={<TheShow/>} />
+            <Route path="/TheShow/:nomeFilm/:filmId" element={<DettagliFilm/>} />
+
+          </Routes>
+        </BrowserRouter>
         <MyFooter />
       </div>
     );
@@ -49,4 +52,3 @@ class App extends Component {
 }
 
 export default App;
-

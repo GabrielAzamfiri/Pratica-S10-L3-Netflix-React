@@ -1,5 +1,5 @@
 import { Component } from "react";
-import logo from "../assets/img/netflix_logo.png";
+
 import avatar from "../assets/img/avatar.png";
 import { Col, Row } from "react-bootstrap";
 
@@ -16,7 +16,7 @@ class MyProfile extends Component {
   }
   render() {
     return (
-      <div  style={{display: this.props.display}}>
+      <div >
         
         <Row className="justify-content-center">
           <Col sm={10} lg={8} xl={6} className="my-5">
@@ -61,8 +61,8 @@ class MyProfile extends Component {
                 <hr className="my-4" />
                 <p className="fs-5">Autoplay controls</p>
                 <div className="mb-2">
-                  <input type="checkbox" className="btn-check" id="btncheck1" onClick={this.checkCheckbox1} autocomplete="off" />
-                  <label className="btn btn-outline-secondary p-1" for="btncheck1">
+                  <input type="checkbox" className="btn-check" id="btncheck1" onClick={this.checkCheckbox1} autoComplete="off" />
+                  <label className="btn btn-outline-secondary p-1" htmlFor="btncheck1">
                     <svg xmlns="http://www.w3.org/2000/svg" id="btncheck1Icon" width="25" height="25" fill="currentColor" style={{opacity: this.state.checkbox1 ? "1" :"0"} } className="bi bi-check-lg " viewBox="0 0 16 16">
                       <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
                     </svg>
@@ -70,8 +70,8 @@ class MyProfile extends Component {
                   <span className="ms-3">Autoplay next episode in a series on all devices.</span>
                 </div>
                 <div>
-                  <input type="checkbox" className="btn-check" id="btncheck2" onClick={this.checkCheckbox2} autocomplete="off" />
-                  <label className="btn btn-outline-secondary p-1" for="btncheck2">
+                  <input type="checkbox" className="btn-check" id="btncheck2" onClick={this.checkCheckbox2} autoComplete="off" />
+                  <label className="btn btn-outline-secondary p-1" htmlFor="btncheck2">
                     <svg xmlns="http://www.w3.org/2000/svg" id="btncheck2Icon" width="25" height="25" fill="currentColor" style={{opacity: this.state.checkbox2 ? "1" :"0"} } className="bi bi-check-lg" viewBox="0 0 16 16">
                       <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
                     </svg>

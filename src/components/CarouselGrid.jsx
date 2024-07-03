@@ -1,16 +1,19 @@
 import { Component } from "react";
 
 import MyCarouselItem from "./MyCarouselItem";
+import { Link } from "react-router-dom";
 
 class CarouselGrid extends Component {
   render() {
     return (
       
       <div>
-
-        <h3 className="my-5 text-start">{this.props.carouselTitle}</h3>
+   
+        <Link to={"/TheShow/" + this.props.film} className="link-light link-offset-0 link-underline-opacity-0 link-underline-opacity-100-hover display-5 d-flex justify-item-start mb-3 mt-5">
+        {this.props.carouselTitle}
+        </Link> 
        
-          <MyCarouselItem film={this.props.film} indexCol="5" />
+          <MyCarouselItem film={this.props.film}  />
       </div>
       
           

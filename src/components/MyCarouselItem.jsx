@@ -43,27 +43,27 @@ class MyCarouselItem extends Component {
               <Row className="gx-3 gy-2 ">
                 <Col>
                   <a href="#">
-                    <img src={this.state.films[0].Poster} alt="immagine film" class="w-100" height={300} />
+                    <img src={this.state.films[0].Poster} alt="immagine film" className="w-100" height={300} />
                   </a>
                 </Col>
                 <Col>
                   <a href="#">
-                    <img src={this.state.films[1].Poster} alt="immagine film" class="w-100" height={300} />
+                    <img src={this.state.films[1].Poster} alt="immagine film" className="w-100" height={300} />
                   </a>
                 </Col>
                 <Col className=" d-none d-sm-inline">
                   <a href="#">
-                    <img src={this.state.films[2].Poster} alt="immagine film" class="w-100" height={300} />
+                    <img src={this.state.films[2].Poster} alt="immagine film" className="w-100" height={300} />
                   </a>
                 </Col>
                 <Col className=" d-none d-md-inline">
                   <a href="#">
-                    <img src={this.state.films[3].Poster} alt="immagine film" class="w-100" height={300} />
+                    <img src={this.state.films[3].Poster} alt="immagine film" className="w-100" height={300} />
                   </a>
                 </Col>
                 <Col className=" d-none d-lg-inline">
                   <a href="#">
-                    <img src={this.state.films[4].Poster} alt="immagine film" class="w-100" height={300} />
+                    <img src={this.state.films[4].Poster} alt="immagine film" className="w-100" height={300} />
                   </a>
                 </Col>
               </Row>
@@ -72,28 +72,28 @@ class MyCarouselItem extends Component {
               <Row className="gx-3 gy-2">
                 <Col className=" d-none d-lg-inline">
                   <a href="#">
-                    <img src={this.state.films[5].Poster} alt="immagine film" class="w-100" height={300} />
+                    <img src={this.state.films[5].Poster} alt="immagine film" className="w-100" height={300} />
                   </a>
                 </Col>
 
                 <Col className=" d-none d-md-inline">
                   <a href="#">
-                    <img src={this.state.films[6].Poster} alt="immagine film" class="w-100" height={300} />
+                    <img src={this.state.films[6].Poster} alt="immagine film" className="w-100" height={300} />
                   </a>
                 </Col>
                 <Col className=" d-none d-sm-inline">
                   <a href="#">
-                    <img src={this.state.films[7].Poster} alt="immagine film" class="w-100" height={300} />
+                    <img src={this.state.films[7].Poster} alt="immagine film" className="w-100" height={300} />
                   </a>
                 </Col>
                 <Col>
                   <a href="#">
-                    <img src={this.state.films[8].Poster} alt="immagine film" class="w-100" height={300} />
+                    <img src={this.state.films[8].Poster} alt="immagine film" className="w-100" height={300} />
                   </a>
                 </Col>
                 <Col>
                   <a href="#">
-                    <img src={this.state.films[9].Poster} alt="immagine film" class="w-100" height={300} />
+                    <img src={this.state.films[9].Poster} alt="immagine film" className="w-100" height={300} />
                   </a>
                 </Col>
               </Row>
