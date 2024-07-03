@@ -9,13 +9,12 @@ class TopBar extends Component {
       <header style={{ background: "linear-gradient(180deg, rgba(1, 1, 10, 1) 0%, rgba(26, 29, 32, 1) 64%)" }}>
         <Navbar expand="lg">
           <Container className="container-fluid container-lg">
-            <Navbar.Brand href="#">
-              <img src={logo} alt="netflix_logo" width="120px" />
-            </Navbar.Brand>
+          <NavLink to="/" className="navbar-brand">  <img src={logo} alt="netflix_logo" width="120px" /> </NavLink>
+            
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto my-2 my-lg-0">
-                <Nav.Link href="#home">Home</Nav.Link>
+                <NavLink to="/" className="nav-link"> Home </NavLink>
                 <Nav.Link href="#link1">TV Shows</Nav.Link>
                 <Nav.Link href="#link2">Movies</Nav.Link>
                 <Nav.Link href="#link3">Recently Added</Nav.Link>

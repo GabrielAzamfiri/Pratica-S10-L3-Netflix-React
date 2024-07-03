@@ -35,7 +35,7 @@ const TheShow = () => {
           films.map(film => (
             <Col xs={3} key={film.imdbID} className="mb-4">
               <Card>
-                <Link to={"/TheShow/" + nomeFilm + "/" +film.imdbID}>
+                <Link to={"/TheShow/" + nomeFilm + "/" + film.imdbID}>
                   <Card.Img variant="top" src={film.Poster} alt={film.Title} className="w-100" height={360} />
                 </Link>
                 <Card.Body>
